@@ -3,6 +3,8 @@ const express = require('express');
 
 const timerHistoryRouter = require('./routes/timerHistory.js');
 const projectsRouter = require('./routes/projects.js');
+const categoryRouter = require('./routes/category.js');
+const apiRouter = require('./routes/api.js');
 
 const app = express();
 
@@ -13,6 +15,21 @@ app.use(express.json());
 // add your api routers here
 app.use('/api/projects', projectsRouter);
 app.use('/api/timerHistory', timerHistoryRouter);
+app.use('/api/categories', categoryRouter);
+app.use('/api', apiRouter);
+
+// ***** This test works to our DB! *******
+
+app.get('/api/users', (req, res) => {
+  const queryText = 'SELECT * FROM users';
+  db.query(queryText)
+    .then((data) => {
+      res.json(data.rows);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
 
 app.get('/', (req, res) =>
   res.status(200).sendFile(path.resolve(__dirname, '../client/index.html'))

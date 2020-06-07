@@ -10,45 +10,45 @@ export const login = (allData) => ({
   payload: allData,
 });
 
-// export const signUp = () => ({
-//   type: types.SIGNUP,
-//   payload: ,
-// });
+export const signUp = (user) => ({
+  type: types.SIGNUP,
+  payload: user,
+});
 
-// export const logOut = () => ({
-//   type: types.LOGOUT,
-//   payload: ,
-// });
+export const logOut = (user) => ({
+  type: types.LOGOUT,
+  payload: user,
+});
 
-// export const addProject = () => ({
-//   type: types.ADD_PROJECT,
-//   payload: ,
-// });
+export const addProject = (project) => ({
+  type: types.ADD_PROJECT,
+  payload: project,
+});
 
-// export const deleteProject = () => ({
-//   type: types.DELETE_PROJECT,
-//   payload: ,
-// });
+export const deleteProject = (project) => ({
+  type: types.DELETE_PROJECT,
+  payload: project,
+});
 
-// export const completeProject = () => ({
-//   type: types.COMPLETE_PROJECT,
-//   payload: ,
-// });
+export const completeProject = (project) => ({
+  type: types.COMPLETE_PROJECT,
+  payload: project,
+});
 
-// export const addCategory = () => ({
-//   type: types.ADD_CATEGORY,
-//   payload: ,
-// });
+export const addCategory = (categorie) => ({
+  type: types.ADD_CATEGORY,
+  payload: categorie,
+});
 
-// export const deleteCategory = () => ({
-//   type: types.DELETE_CATEGORY,
-//   payload: ,
-// });
+export const deleteCategory = (categorie) => ({
+  type: types.DELETE_CATEGORY,
+  payload: categorie,
+});
 
 // if statement if currenIds are not the same as state trigger stopTimer
 // send info and resert state and start new timer
-export const startTimer = (currentIds) => ({
-  type: types.START_TIMER,
+export const playTimer = (currentIds) => ({
+  type: types.PLAY_TIMER,
   // expecting object {  currentProjectId: 0, currentCategoryId: 0 }
   payload: currentIds,
 });

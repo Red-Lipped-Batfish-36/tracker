@@ -4,6 +4,9 @@ const initialState = {
   user: {},
   projects: [],
   categories: [],
+  timerActive: [],
+  currentProjectName: '',
+  currentCategoryName: '',
   currentProjectId: 0,
   currentCategoryId: 0,
   startTimer: 0,
@@ -15,6 +18,9 @@ const mainReducer = (state = initialState, action) => {
   let user;
   let projects;
   let categories;
+  let timerActivity;
+  let currentProjectName;
+  let currentCategoryName;
   let currentProjectId;
   let currentCategoryId;
   let startTimer;
@@ -22,14 +28,71 @@ const mainReducer = (state = initialState, action) => {
   let lastInterval;
 
   switch (action.type) {
-    // case types.SIGNUP
-    // case types.LOGOUT
-    // case types.ADD_PROJECT
-    // case types.DELETE_PROJECT
-    // case types.COMPLETE_PROJECT
-    // case types.ADD_CATEGORY
-    // case types.DELETE_CATEGORY
     case types.LOGIN:
+      user = action.payload.user;
+      projects = action.payload.projects;
+      categories = action.payload.categories;
+      timerActivity = action.payload.timerActivity;
+
+      return {
+        ...state,
+        user,
+        projects,
+        categories,
+        timerActivity,
+      };
+
+    case types.SIGNUP:
+      user = action.payload.user;
+
+      return {
+        ...state,
+        user,
+      };
+
+    case types.LOGOUT:
+      user = {};
+      projects = [];
+      categories = [];
+      timerActive = [];
+      currentProjectName = '';
+      currentCategoryName = '';
+      currentProjectId = 0;
+      currentCategoryId = 0;
+      startTimer = 0;
+      endTimer = 0;
+      lastInterval = 0;
+
+      return {
+        ...state,
+        user,
+        projects,
+        categories,
+        timerActivity,
+        currentProjectName,
+        currentCategoryName,
+        currentProjectId,
+        currentCategoryId,
+        startTimer,
+        endTimer,
+        lastInterval,
+      };
+
+    case types.ADD_PROJECT:
+      user = action.payload.user;
+      projects = action.payload.projects;
+      categories = action.payload.categories;
+      timerActivity = action.payload.timerActivity;
+
+      return {
+        ...state,
+        user,
+        projects,
+        categories,
+        timerActivity,
+      };
+
+    case types.DELETE_PROJECT:
       user = action.payload.user;
       projects = action.payload.projects;
       categories = action.payload.categories;
@@ -41,13 +104,45 @@ const mainReducer = (state = initialState, action) => {
         categories,
       };
 
-    case types.START_TIMER:
+    case types.COMPLETE_PROJECT:
+      user = action.payload.user;
+      projects = action.payload.projects;
+      categories = action.payload.categories;
+
+      return {
+        ...state,
+        user,
+        projects,
+        categories,
+      };
+
+    case types.ADD_CATEGORY:
+      categories = action.payload.categories;
+
+      return {
+        ...state,
+        categories,
+      };
+
+    case types.DELETE_CATEGORY:
+      categories = action.payload.categories;
+
+      return {
+        ...state,
+        categories,
+      };
+
+    case types.PLAY_TIMER:
       startTimer = Date.now();
+      currentProjectName = action.payload.currentProjectName;
+      currentCategoryName = action.payload.currentCategoryName;
       currentProjectId = action.payload.currentProjectId;
       currentCategoryId = action.payload.currentCategoryId;
 
       return {
         ...state,
+        currentProjectName,
+        currentCategoryName,
         currentProjectId,
         currentCategoryId,
         startTimer,
@@ -55,15 +150,13 @@ const mainReducer = (state = initialState, action) => {
 
     case types.STOP_TIMER:
       stopTimer = Date.now();
-      currentProjectId = action.payload.currentProjectId;
-      currentCategoryId = action.payload.currentCategoryId;
       lastInterval = startTimer - stopTimer;
+      timerActivity = action.payload.timerActivity;
       startTimer = 0;
 
       return {
         ...state,
-        currentProjectId,
-        currentCategoryId,
+        timerActivity,
         startTimer,
         stopTimer,
         lastInterval,

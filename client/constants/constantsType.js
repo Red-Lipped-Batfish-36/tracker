@@ -6,5 +6,5 @@ export const DELETE_PROJECT = 'DELETE_PROJECT';
 export const COMPLETE_PROJECT = 'COMPLETE_PROJECT';
 export const ADD_CATEGORY = 'ADD_CATEGORY';
 export const DELETE_CATEGORY = 'DELETE_CATEGORY';
-export const START_TIMER = 'START_TIMER';
+export const PLAY_TIMER = 'START_TIMER';
 export const STOP_TIMER = 'STOP_TIMER';

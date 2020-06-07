@@ -18,7 +18,7 @@ const App = ({ store }) => {
           <Route exact path="/:filter?" component={LoginContainer} />
           {/* <Route exact path="/signup" component={SignUpContainer} /> */}
           {/* real user <Route exact path="/:user" component={MainContainer} /> */}
-          <Route exact path="/user" component={MainContainer} />
+          <Route exact path="/:user" component={MainContainer} />
         </Switch>
       </Router>
     </Provider>
