@@ -150,8 +150,9 @@ const mainReducer = (state = initialState, action) => {
 
     case types.STOP_TIMER:
       stopTimer = Date.now();
-      lastInterval = startTimer - stopTimer;
-      timerActivity = action.payload.timerActivity;
+      lastInterval = stopTimer - startTimer;
+      timerActivity = state.timerActive.slice();
+      timerActivity.push(action.payload.timerActivity);
       startTimer = 0;
 
       return {

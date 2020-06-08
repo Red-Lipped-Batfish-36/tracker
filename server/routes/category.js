@@ -1,13 +1,13 @@
 const express = require('express');
 
-const categoryController = require('../controllers/categoryControllers');
+const categoryController = require('../controllers/categoryController');
 
 const router = express.Router();
 
 
 
 router.get('/', categoryController.getCategory, (req,res) => {
-    res.status(200).json(res.locals.data);
+    res.status(200).json(res.locals.categories);
 });
 
 router.post('/', categoryController.addCategory, (req,res) => {

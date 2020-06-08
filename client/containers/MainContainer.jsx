@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import CategoryCard from './components/CategoryCard.jsx';
-import NavBar from './components/NavBar.jsx';
-import TimerModal from './components/TimerModal.jsx';
+import CategoryCard from '../components/CategoryCard.jsx';
+import NavBar from '../components/NavBar.jsx';
+// import TimerModal from '../components/TimerModal.jsx';
 
 const mapStateToProps = (state) => ({
   user: state.user,
@@ -38,23 +38,14 @@ class MainContainer extends Component {
   }
 
   render() {
-    const categoryElems = categories.map((info, key) => {
+    const categoryElems = this.props.categories.map((info, key) => {
       return (
         <CategoryCard
           key={key}
           info={info}
           user={this.props.user}
           projects={this.props.projects}
-          timerActivity={this.props.timerActivity}
-          currentProjectName={this.props.ProjectName}
-          currentCategoryName={this.props.currentCategoryName}
-          currentProjectId={this.props.currentProjectId}
-          currentCategoryId={this.props.currentCategoryId}
           startTimer={this.props.startTimer}
-          endTimer={this.props.endTimer}
-          lastInterval={this.props.lastInterval}
-          playTimer={this.props.playTimer}
-          stopTimer={this.props.stopTimer}
         />
       );
     });

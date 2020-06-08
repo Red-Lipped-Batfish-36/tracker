@@ -7,7 +7,7 @@ categoryControllers.getCategory = (req, res, next) => {
     const queryText = 'SELECT * From "category"';
     db.query(queryText)
         .then(data => {
-            res.locals.data = data.rows;
+            res.locals.categories = data.rows;
             return next();
         })
         .catch(err => next({

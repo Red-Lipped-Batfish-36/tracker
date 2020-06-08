@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  font-family: arial, sans-serif;
+}
+#app {
+  width: 100%;
+}
+
+#logo {
+  display: inline-block;
+  padding: 0px 12px;
+  font-weight: 700;
+  font-size: 30px;
+  border-radius: 2px;
+  color: #757575;
+  font-family: arial, sans-serif;
+}
+.button {
+  display: inline-block;
+  background: black;
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: 13px;
+  border: 1px solid #f2f2f2;
+  border-radius: 2px;
+  color: #757575;
+  font-family: arial, sans-serif;
+}
+
+.button:hover {
+  border: 1px solid #c6c6c6;
+  color: #222;
+  cursor: default;
+}
+
+#nav {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  width: 100%;
+}
+
+#log-page {
+  background-color: #f8f8f8;
+}
+
+.about {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  margin: -100px -450px;
+}
+
+#log-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 150px;
+  margin: auto;
+}
+
+#form {
+  margin: auto;
+  margin-top: 10%;
+  width: 300px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  text-align: center;
+}
+
+#no-log-in {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 10px;
+  width: 300px;
+}
+
+#sign-up {
+  margin-top: 0;
+  padding: 2px;
+  background-color: white;
+}
+
+#forgot {
+  align-self: center;
+  margin-right: 10px;
+}
+
+#form-sign-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 600px;
+  margin-top: -100px;
+}
+
+#form-log-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 400px;
+}
+
+.info,
+#log-in,
+#password {
+  margin: 5px;
+  width: 240px;
+  height: 30px;
+}
+
+#site-name-log {
+  font-size: 35px;
+  line-height: 1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.site-name {
+  font-size: 20px;
+}
+input {
+  width: 200px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  text-align: center;
+  height: 30px;
+  resize: none;
+}
+
+#user-memories {
+  border-collapse: separate;
+  border-spacing: 30px 0;
+  text-align: center;
+}
+
+#user-numbers {
+  border-collapse: separate;
+  border-spacing: 190px 0;
+}
+
+.media {
+  margin-left: 157px;
+  max-width: 900px;
+}
