@@ -47,7 +47,7 @@ const ProjectList = (props) => {
       
     // // });
     console.log('reqdata: ', reqData);
-    setButtonStatus('▶️');
+    setButtonStatus('►');
     fetch('/api/timerHistory', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
