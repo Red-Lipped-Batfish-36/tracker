@@ -16,18 +16,19 @@ const MainContainer = () => {
   console.log(props);
   // loging not working fake data
   useEffect(() => {
-    console.log('using effect');
+    console.log('using effect')
     if (isFetch === true) {
       const reqData = {
+        // hardcoded username, should send separate get request to find user data
         username: 'tom',
-        password: 'tompassword',
-      };
+        password: 'tompassword'
+      }
       fetch('/api/', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
         },
-        body: JSON.stringify(reqData),
+        body: JSON.stringify(reqData)
       })
         .then((res) => {
           return res.json();
@@ -39,11 +40,12 @@ const MainContainer = () => {
           payload.categories = data.categories;
           payload.timerActivity = data.timerHistory;
 
-          dispatch(login(payload));
-        });
-      setIsFetch(false);
+          dispatch(login(payload))
+
+        })
+      setIsFetch(false)
     }
-  });
+  })
 
   const categoryElems = props.categories.map((info, key) => {
     return (
@@ -91,7 +93,7 @@ const MainContainer = () => {
 
 export default MainContainer;
 
-/* 
+/*
 const data = {
           user: {
               _id: 1,
@@ -100,7 +102,7 @@ const data = {
           projects: [{
               _id: 1,
               title: 'Not specified',
-            }, {           
+            }, {
               _id: 2,
               title: 'Project 1',
             }],
@@ -161,7 +163,7 @@ const data = {
       setIsFetch(false)
     }
   })
-  
+
   const categoryElems = props.categories.map((info, key) => {
     return (
       <CategoryCard
@@ -179,7 +181,7 @@ const data = {
 
   return (
       <div id="mainDiv">
-        <NavBar 
+        <NavBar
           id="navMain"
           user={props.user}
         />
@@ -200,7 +202,7 @@ const data = {
               currentProjectName = {props.currentProjectName}
               currentCategoryName = {props.currentCategoryName}
               startTimer={props.startTimer}
-              endTimer={props.endTimer} 
+              endTimer={props.endTimer}
             />
           </div>
           <div className="cardsContainer">
