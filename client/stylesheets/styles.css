@@ -4,7 +4,7 @@ body{
   font-family: arial, sans-serif;
 }
 #app {
-  width: 100%;
+  /* width: 100%; */
 }
 
 #logo {
@@ -117,34 +117,36 @@ body{
   font-size: 10px;
 }
 .mainSection {
-  margin-top: -300px;
+  margin-top: -600px;
   max-width: 1200px;
 }
 #sideBar{
-  margin-top: 30px;
+  margin-top: -150px;
   height: 100%;
   width: 160px;
   position: fixed;
   color: grey;
 } 
+
+
 #graf{
-  width: 100%;
+  /* position: fixed; */
   background-color: white;
-  margin: 0;
+  width: 1200px;
 }
 
 #graphic {
-  padding: 50px 0;
+  padding-left: 220px;
 }
 
 .bar {
   display: inline-block;
-  background-color: grey;
 }
 
 .Coding{
   background-color: #D3BF6D;
   text-align: center;
+  /* display: inline-block; */
 }
 
 #category0 {
@@ -155,6 +157,7 @@ body{
 .Debug{
   background-color: #B1D4E3;
   text-align: center;
+  /* display: inline-block; */
 }
 
 #category1{
@@ -165,6 +168,7 @@ body{
 .Meetings{
   background-color: #E6BBB6;
   text-align: center;
+  /* display: inline-block; */
 }
 
 #category2 {
@@ -173,12 +177,13 @@ body{
 }
 
 .projectGraphic {
-  margin: 24px 0;
+  width: 100%;
 }
 
 .Code {
   background-color: #B1A4C1;
   text-align: center;
+  /* display: inline-block; */
 }
 
 #category4 {
@@ -189,6 +194,7 @@ body{
 .QA{
   background-color: #A9D18E;
   text-align: center;
+  /* display: inline-block; */
 }
 
 #category3 {
@@ -196,9 +202,10 @@ body{
   background-size: cover;
 }
 
-.Reasearch{
+.Research{
   background-color: #F4B183;
   text-align: center;
+  /* display: inline-block; */
 }
 
 #category5 {
@@ -209,6 +216,7 @@ body{
 .Documentation{
   background-color: #6AE4DD;
   text-align: center;
+  /* display: inline-block; */
 }
 
 #category6 {
@@ -218,6 +226,8 @@ body{
 
 .Other {
   background-color: grey;
+  text-align: center;
+  /* display: inline-block; */
 }
 
 #category7 {
@@ -243,7 +253,7 @@ body{
 .cardsContainer{
   display: grid;
   margin-left: 170px;
-  margin-top: 300px;
+  margin-top: 600px;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
 }
 

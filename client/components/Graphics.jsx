@@ -39,9 +39,8 @@ const Graphics = (props) => {
   const bars = barsWidth.map((barWidth, index) => {
 
     return barWidth > 0 ? (
-      <div className={'bar ' + barsLabel[index]} style={{
-        'width': `${barWidth / total * 100}%`,
-      }} >{`${Math.round(barWidth / total * 100)}% ${barsLabel[index]}`}</div>
+    <div className={'bar ' + barsLabel[index]} style={{
+      'width': `${Math.floor(barWidth/total * 100)}%`}} >{`${Math.floor(barWidth/total * 100)}%`}</div>
     ) : <div />
   })
 
@@ -54,24 +53,28 @@ const Graphics = (props) => {
     const projectBars = projectBarsWidth.map((projectWidth, index) => {
       return projectWidth > 0 ? (
         <div className={'bar ' + projectBarsLabel[index]} style={{
-          'width': `${projectWidth / projectTotal * 100}%`,
-        }} >{`${Math.round(projectWidth / projectTotal * 100)}% ${projectBarsLabel[index]}`}</div>
-      ) : <div />
+          'width': `${Math.floor(projectWidth/projectTotal * 100)}%`,
+        }} >{`${Math.floor(projectWidth/projectTotal * 100)}%`}</div>
+        ) : <div />
     })
 
     return (
+      <div>
+      <div className='barName'>{project.title} : </div>
       <div className='projectGraphic'>
-        <div>{project.title}</div>
         {projectBars}
-      </div>)
+      </div>
+      </div>
+      )
   })
 
   return (
-    < div id="graphic">
-      {bars}
-      {projectGraphics}
-    </div>
-  );
+        <div div id="graphic">
+        <div>TOTAL : </div>
+        {bars}
+        {projectGraphics}
+        </div>
+    );
 }
 
 export default Graphics;
